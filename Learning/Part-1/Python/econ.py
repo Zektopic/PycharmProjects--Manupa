@@ -1,0 +1,8 @@
+p1 = float(input("Enter initial price"))
+p2 = float(input("Enter Final price"))
+q1 = float(input("Enter initial quantity"))
+q2 = float(input("Enter final quanity"))
+dp = float(p1)-float(p2)
+dq = float(q2)-float(q1)
+ped = (dq/dp)*(p1/q1)
+print("The PED is: " + str(ped))
