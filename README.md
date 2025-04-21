@@ -1,5 +1,8 @@
 ---
 
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # PycharmProjects--Manupa
 
 This repository contains various Python projects and code snippets created using PyCharm. It serves as a workspace for learning, experimenting, and building Python-based solutions.
@@ -11,6 +14,22 @@ This repository contains various Python projects and code snippets created using
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
+
+/
+├── project1/      # Description of project 1
+├── project2/      # Description of project 2
+├── utils/         # Utility scripts
+└── README.md      # Repository documentation
+
+## Key Projects
+- **Project1**: A script that performs data analysis on weather data.
+- **Project2**: A web scraper for extracting information from websites.
+
+### Installing Dependencies
+Install the required Python packages with:
+```bash
+pip install -r requirements.txt
+ ```
 
 ## About
 This repository includes a collection of Python projects developed by [manupawickramasinghe](https://github.com/manupawickramasinghe). It is designed for educational purposes, personal projects, or prototypes. Each project or script demonstrates different aspects of Python programming, from basic utilities to more complex solutions.
