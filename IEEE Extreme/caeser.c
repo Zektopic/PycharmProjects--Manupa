@@ -4,7 +4,7 @@ int main()
 {
 char message[100], ch;
 int i, key;
-fgets(message);
+fgets(message, 100, stdin);
 key = 12;
 for(i = 0; message[i] != '\0'; ++i){
 ch = message[i];
