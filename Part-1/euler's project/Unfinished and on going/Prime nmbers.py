@@ -9,10 +9,12 @@ def isPrime(n) :
     while(i * i <= n) :
         if (n % i == 0 or n % (i + 2) == 0) :
             return False
-    i = i + 6
+        i = i + 6
     return True
-T = int(input("Number: "))
-if (isPrime(T)) :
-    print(" true")
-else :
-    print(" false")
+
+if __name__ == "__main__":
+    T = int(input("Number: "))
+    if (isPrime(T)) :
+        print(" true")
+    else :
+        print(" false")
