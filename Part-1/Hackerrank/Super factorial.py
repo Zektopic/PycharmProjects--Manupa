@@ -1,5 +1,5 @@
 
-def part1():
+def part1(ass):
     n = ass
     total = 1
     total_1 = total
@@ -9,13 +9,14 @@ def part1():
         total *= n
         n -= 1
         total_1 = total
+    return total_1
 
 
 ass = int(input())
 count_1 = ass
 if 0 <= ass <= 750 :
+    total_1 = part1(ass)
     while count_1 > 0 :
-        part1()
         total_1 *= ass
         count_1 -= 1
     print(total_1)
