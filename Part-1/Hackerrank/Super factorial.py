@@ -2,13 +2,11 @@
 def part1():
     n = ass
     total = 1
-    total_1 = total
     count = n
     while count > 0 :
         count -= 1
         total *= n
         n -= 1
-        total_1 = total
 
 
 ass = int(input())
