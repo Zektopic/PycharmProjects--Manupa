@@ -21,26 +21,27 @@ def get_number():
 import numpy as np
 #import scipy
 
-T = get_number()
-answers = np.zeros(T)
+if __name__ == '__main__':
+    T = get_number()
+    answers = np.zeros(T)
 
-for t in range(T):
-    N = get_number()
-    answer = 1
-    array = np.array([-1]*360, dtype=int)
+    for t in range(T):
+        N = get_number()
+        answer = 1
+        array = np.array([-1]*360, dtype=int)
 
-    for n in range(N):
-        D = get_number()
-        
-        boundedAngle = D % 180
-        if boundedAngle not in array:
-            array[boundedAngle] = boundedAngle
-            if answer == 1:
-                answer += 1
-            else:
-                answer += 2
+        for n in range(N):
+            D = get_number()
 
-    answers[t] = answer
+            boundedAngle = D % 180
+            if boundedAngle not in array:
+                array[boundedAngle] = boundedAngle
+                if answer == 1:
+                    answer += 1
+                else:
+                    answer += 2
 
-for ans in answers:
-    print(int(ans))
+        answers[t] = answer
+
+    for ans in answers:
+        print(int(ans))
