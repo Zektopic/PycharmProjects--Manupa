@@ -7,6 +7,7 @@ def fibonnaci(n):
         return 1
     elif n > 2 :
         return fibonnaci(n-1) + fibonnaci(n-2)
-for n in range(1, 501):
-    print(n, ":",fibonnaci(n))
+if __name__ == "__main__":
+    for n in range(1, 501):
+        print(n, ":",fibonnaci(n))
 
