@@ -6,7 +6,8 @@ def max_num(num1, num2, num3):
     else:
         return num3
 
-num1 = int(input("1: "))
-num2 = int(input("2: "))
-num3 = int(input("3: "))
-print(max_num(num1, num2, num3))
+if __name__ == "__main__":
+    num1 = int(input("1: "))
+    num2 = int(input("2: "))
+    num3 = int(input("3: "))
+    print(max_num(num1, num2, num3))
