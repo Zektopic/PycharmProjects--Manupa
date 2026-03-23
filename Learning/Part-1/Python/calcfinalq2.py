@@ -89,24 +89,26 @@ def select_op(choice):
     history(str(last_calculation))
   else:
     print("Unrecognized operation")
-c1 = 0
 hist = []
-while True:
-  print("Select operation.")
-  print("1.Add      : + ")
-  print("2.Subtract : - ")
-  print("3.Multiply : * ")
-  print("4.Divide   : / ")
-  print("5.Power    : ^ ")
-  print("6.Remainder: % ")
-  print("7.Terminate: # ")
-  print("8.Reset    : $ ")
-  print("8.History  : ? ")  
-  # take input from the user
-  choice = input("Enter choice(+,-,*,/,^,%,#,$,?): ")
-  print(choice)
-  c1 +=1 
-  if(select_op(choice) == -1):
-    #program ends here
-    print("Done. Terminating")
-    exit()
+
+if __name__ == '__main__':
+  c1 = 0
+  while True:
+    print("Select operation.")
+    print("1.Add      : + ")
+    print("2.Subtract : - ")
+    print("3.Multiply : * ")
+    print("4.Divide   : / ")
+    print("5.Power    : ^ ")
+    print("6.Remainder: % ")
+    print("7.Terminate: # ")
+    print("8.Reset    : $ ")
+    print("8.History  : ? ")
+    # take input from the user
+    choice = input("Enter choice(+,-,*,/,^,%,#,$,?): ")
+    print(choice)
+    c1 +=1
+    if(select_op(choice) == -1):
+      #program ends here
+      print("Done. Terminating")
+      exit()
