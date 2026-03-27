@@ -2,8 +2,7 @@ import time
 import math
 
 def name_original(total):
-    for item in range(1, 21):
-        total *= item
+    total *= math.factorial(20)
 
 def name_optimized(total):
     total *= math.factorial(20)
