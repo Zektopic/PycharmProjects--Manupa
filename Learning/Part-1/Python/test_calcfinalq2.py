@@ -56,5 +56,28 @@ class TestCalcHistory(unittest.TestCase):
             # Restore stdout
             sys.stdout = sys.__stdout__
 
+class TestCalcOperations(unittest.TestCase):
+    def test_divide_by_zero(self):
+        # Redirect stdout
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        try:
+            # Test int division
+            result = calcfinalq2.divide(10, 0)
+            self.assertIsNone(result)
+            self.assertEqual(captured_output.getvalue().strip(), "division by zero")
+
+            # Reset stdout for the next check
+            captured_output.truncate(0)
+            captured_output.seek(0)
+
+            # Test float division
+            result_float = calcfinalq2.divide(10.0, 0.0)
+            self.assertIsNone(result_float)
+            self.assertEqual(captured_output.getvalue().strip(), "float division by zero")
+        finally:
+            # Restore stdout
+            sys.stdout = sys.__stdout__
+
 if __name__ == '__main__':
     unittest.main()
