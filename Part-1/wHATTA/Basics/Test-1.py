@@ -6,9 +6,9 @@ import sys
 def check_password(entered_password, stored_hash):
     return hashlib.sha256(entered_password.encode()).hexdigest() == stored_hash
 
-# Default hash for password '9'
-DEFAULT_HASH = "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
-stored_password_hash = os.environ.get("APP_PASSWORD_HASH", DEFAULT_HASH)
+stored_password_hash = os.environ.get("APP_PASSWORD_HASH")
+if not stored_password_hash:
+    raise RuntimeError("APP_PASSWORD_HASH environment variable is not set")
 
 def secure_input(prompt):
     if sys.stdin.isatty():
