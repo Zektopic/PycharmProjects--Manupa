@@ -22,8 +22,6 @@ if __name__ == '__main__':
 
     n = int(first_multiple_input[0])
 
-    m = int(first_multiple_input[1])
-
     topic = []
 
     for _ in range(n):
