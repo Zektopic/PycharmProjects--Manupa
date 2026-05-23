@@ -1,21 +1,24 @@
 import unittest
 import importlib
 import hashlib
+import os
+
+TEST_HASH = "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+os.environ["APP_PASSWORD_HASH"] = TEST_HASH
 
 # Import the module with a hyphen in the name
 test_1 = importlib.import_module("Part-1.wHATTA.Basics.Test-1")
 check_password = test_1.check_password
-DEFAULT_HASH = test_1.DEFAULT_HASH
 
 class TestCheckPassword(unittest.TestCase):
     def test_correct_password(self):
-        self.assertTrue(check_password("9", DEFAULT_HASH))
+        self.assertTrue(check_password("9", TEST_HASH))
 
     def test_incorrect_password(self):
-        self.assertFalse(check_password("wrongpassword", DEFAULT_HASH))
+        self.assertFalse(check_password("wrongpassword", TEST_HASH))
 
     def test_empty_password(self):
-        self.assertFalse(check_password("", DEFAULT_HASH))
+        self.assertFalse(check_password("", TEST_HASH))
 
     def test_different_valid_hash(self):
         password = "newpassword123"
