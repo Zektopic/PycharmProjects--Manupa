@@ -19,7 +19,6 @@ def get_number():
         return float(data)
 
 import numpy as np
-#import scipy
 
 if __name__ == '__main__':
     T = get_number()
