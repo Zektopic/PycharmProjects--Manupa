@@ -23,13 +23,8 @@ data_fft = np.fft.fft(data)
 frequencies = np.abs(data_fft)
 
 #filtering the frequencies
-filtered = []
-
-for index, f in enumerate(frequencies):
-    if index >950 and index < 1050:
-        filtered.append(f)
-    else:
-        filtered.append(0)
+filtered = np.zeros_like(frequencies)
+filtered[951:1050] = frequencies[951:1050]
 
 recovered = np.fft.ifft(filtered)
 
