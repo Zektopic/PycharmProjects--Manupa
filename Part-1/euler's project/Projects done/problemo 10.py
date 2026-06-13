@@ -1,6 +1,6 @@
 N=2000000
 s = 0
-Primes = [True for k in range(N + 1)]
+Primes = [True] * (N + 1)
 p = 2
 Primes[0] = False  # zero is not a prime number.
 Primes[1] = False  # one is also not a prime number.
