@@ -2,9 +2,21 @@ import hashlib
 import os
 import getpass
 import sys
+import secrets
+import binascii
+
+def hash_password(password):
+    salt = secrets.token_hex(16)
+    pwd_hash = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt.encode('utf-8'), 100000)
+    return f"{salt}:{binascii.hexlify(pwd_hash).decode('ascii')}"
 
 def check_password(entered_password, stored_hash):
-    return hashlib.sha256(entered_password.encode()).hexdigest() == stored_hash
+    try:
+        salt, hash_hex = stored_hash.split(':', 1)
+        pwd_hash = hashlib.pbkdf2_hmac('sha256', entered_password.encode('utf-8'), salt.encode('utf-8'), 100000)
+        return secrets.compare_digest(binascii.hexlify(pwd_hash).decode('ascii'), hash_hex)
+    except ValueError:
+        return False
 
 stored_password_hash = os.environ.get("APP_PASSWORD_HASH")
 if not stored_password_hash:
