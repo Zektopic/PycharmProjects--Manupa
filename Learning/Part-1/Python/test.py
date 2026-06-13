@@ -65,66 +65,66 @@ def other(choice,a,b):
 
 
 
-while True:
-    print("Select operation.")
-    print("1.Add      : + ")
-    print("2.Subtract : - ")
-    print("3.Multiply : * ")
-    print("4.Divide   : / ")
-    print("5.Power    : ^ ")
-    print("6.Remainder: % ")
-    print("7.Terminate: # ")
-    print("8.Reset    : $ ")
-  
-    # take input from the user
-    choice = input("Enter choice(+,-,*,/,^,%,#,$): ")
-    print(choice)
-    select_op(choice)
-    if(select_op(choice) == -1):
-    #program ends here
-        print("Done. Terminating")
-        exit()
-    elif(select_op(choice) == 0):        
-        c1 = True 
-        c2 = False
-        while(c1 == True):
-            a = input("Enter first number: ")
-            print(a)
-            try:
-                a = float(a)
-                c1 = False
-                c2 = True
-            except:
-                if(a[-1]=='$'):
-                    choice = '$'
-                    select_op(choice)
-                    b ="1"
-                    break
-                elif(a[-1]=='#'):
-                    print("Done. Terminating")
-                    exit()
-                else:
-                    print("Not a valid number,please enter again")
-                    c1 = True
-        while(c2 == True):
-            b = input("Enter second number: ")
-            print(b)
-            try:
-                b = float(b)
-                c2 = False
-            except:
-                if(b[-1]=="$"):
-                    choice = '$'
-                    select_op(choice)
-                    b ="1"
-                    break
-                elif(b[-1]=='#'):
-                    print("Done. Terminating")
-                    exit()
-                else:
-                    print("Not a valid number,please enter again")
-                    c2 = True
-        other(choice,a,b)
-    elif(select_op(choice) == 1):
-        True
+if __name__ == '__main__':
+    while True:
+        print("Select operation.")
+        print("1.Add      : + ")
+        print("2.Subtract : - ")
+        print("3.Multiply : * ")
+        print("4.Divide   : / ")
+        print("5.Power    : ^ ")
+        print("6.Remainder: % ")
+        print("7.Terminate: # ")
+        print("8.Reset    : $ ")
 
+        # take input from the user
+        choice = input("Enter choice(+,-,*,/,^,%,#,$): ")
+        print(choice)
+        select_op(choice)
+        if(select_op(choice) == -1):
+        #program ends here
+            print("Done. Terminating")
+            exit()
+        elif(select_op(choice) == 0):
+            c1 = True
+            c2 = False
+            while(c1 == True):
+                a = input("Enter first number: ")
+                print(a)
+                try:
+                    a = float(a)
+                    c1 = False
+                    c2 = True
+                except:
+                    if(a[-1]=='$'):
+                        choice = '$'
+                        select_op(choice)
+                        b ="1"
+                        break
+                    elif(a[-1]=='#'):
+                        print("Done. Terminating")
+                        exit()
+                    else:
+                        print("Not a valid number,please enter again")
+                        c1 = True
+            while(c2 == True):
+                b = input("Enter second number: ")
+                print(b)
+                try:
+                    b = float(b)
+                    c2 = False
+                except:
+                    if(b[-1]=="$"):
+                        choice = '$'
+                        select_op(choice)
+                        b ="1"
+                        break
+                    elif(b[-1]=='#'):
+                        print("Done. Terminating")
+                        exit()
+                    else:
+                        print("Not a valid number,please enter again")
+                        c2 = True
+            other(choice,a,b)
+        elif(select_op(choice) == 1):
+            True
