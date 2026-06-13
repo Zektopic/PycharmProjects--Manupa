@@ -37,7 +37,7 @@ def divide(a,b):
     return a/b
 def power(a,b):
     return a**b
-def reminder(a,b):
+def remainder(a,b):
     return a%b
 def select_op(choice):
     if(choice == '#'):
@@ -61,28 +61,29 @@ def select_op(choice):
         elif(choice == '^'):
             print(f"{a} ^ {b} = {power(a, b)}")
         elif(choice == '%'):
-            print(f"{a} % {b} = {reminder(a, b)}")
+            print(f"{a} % {b} = {remainder(a, b)}")
     else:
         print("Unrecognized operation")
 
 
 
-while True:
-    print("Select operation.")
-    print("1.Add      : + ")
-    print("2.Subtract : - ")
-    print("3.Multiply : * ")
-    print("4.Divide   : / ")
-    print("5.Power    : ^ ")
-    print("6.Remainder: % ")
-    print("7.Terminate: # ")
-    print("8.Reset    : $ ")
-  
-    # take input from the user
-    choice = input("Enter choice(+,-,*,/,^,%,#,$): ")
-    if(select_op(choice) == -1):
-        #program ends here
-        print("Done. Terminating")
-        exit()
+if __name__ == "__main__":
+    while True:
+        print("Select operation.")
+        print("1.Add      : + ")
+        print("2.Subtract : - ")
+        print("3.Multiply : * ")
+        print("4.Divide   : / ")
+        print("5.Power    : ^ ")
+        print("6.Remainder: % ")
+        print("7.Terminate: # ")
+        print("8.Reset    : $ ")
+
+        # take input from the user
+        choice = input("Enter choice(+,-,*,/,^,%,#,$): ")
+        if(select_op(choice) == -1):
+            #program ends here
+            print("Done. Terminating")
+            exit()
 
   
