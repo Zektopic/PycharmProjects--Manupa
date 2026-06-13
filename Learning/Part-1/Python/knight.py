@@ -1,14 +1,11 @@
 # Python3 program to solve Knight Tour problem using Backtracking
 
-# Chessboard Size
-n = int(input())
-
-
 def isSafe(x, y, board):
 	'''
 		A utility function to check if i,j are valid indexes
 		for N*N chessboard
 	'''
+	n = len(board)
 	if(x >= 0 and y >= 0 and x < n and y < n and board[x][y] == -1):
 		return True
 	return False
@@ -53,8 +50,10 @@ def solveKT(n):
 	# Checking if solution exists or not
 	if(not solveKTUtil(n, board, 0, 0, move_x, move_y, pos)):
 		print("Solution does not exist")
+		return False
 	else:
 		printSolution(n, board)
+		return True
 
 
 def solveKTUtil(n, board, curr_x, curr_y, move_x, move_y, pos):
@@ -80,10 +79,14 @@ def solveKTUtil(n, board, curr_x, curr_y, move_x, move_y, pos):
 	return False
 
 
-# Driver Code
-if __name__ == "__main__":
-	
+def main():
+	# Chessboard Size
+	n = int(input())
 	# Function Call
 	solveKT(n)
+
+# Driver Code
+if __name__ == "__main__":
+	main()
 
 # This code is contributed by AAKASH PAL
