@@ -10,7 +10,7 @@ def decrypt():
     print()
     key = int(input("Enter key to decrypt: "))
     
-    decrypted_message = ""
+    decrypted_message = []
 
     for c in encrypted_message:
 
@@ -18,9 +18,11 @@ def decrypt():
             position = alphabet.find(c)
             new_position = (position - key) % 26
             new_character = alphabet[new_position]
-            decrypted_message += new_character
+            decrypted_message.append(new_character)
         else:
-            decrypted_message += c
+            decrypted_message.append(c)
+
+    decrypted_message = "".join(decrypted_message)
 
     print("\nDecrypting your message...\n")
     sleep(2) # give an appearance of doing something complicated
