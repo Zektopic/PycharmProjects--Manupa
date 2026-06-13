@@ -1,5 +1,3 @@
-import wave
-import struct
 import numpy as np
 import matplotlib.pyplot as plt
 
