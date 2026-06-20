@@ -1,8 +1,14 @@
 number = 1
-while number < 8462696833 :
-    if 8462696833  % number == 0:
+target = 8462696833
+large_factors = []
+while number * number <= target:
+    if target % number == 0:
         print(number)
-        number += 1
-    else:
-        number += 1
+        if number * number != target and number != 1:
+            large_factors.append(target // number)
+    number += 1
+
+for factor in reversed(large_factors):
+    print(factor)
+
 input("  ")
