@@ -1,5 +1,5 @@
 number = 1
-while number < 600851475143 :
+while number <= int(600851475143**0.5):
     if 600851475143 % number == 0:
         num = number
 
