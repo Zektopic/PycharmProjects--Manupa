@@ -1,6 +1,4 @@
-import wave
 import numpy as np
-import struct
 import matplotlib.pyplot as plt
 frequency = 1000
 noisy_freq = 50
