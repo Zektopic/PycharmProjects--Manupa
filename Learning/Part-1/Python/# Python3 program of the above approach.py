@@ -1,5 +1,4 @@
 # Python3 program of the above approach
-import sys
 def splitIntoFibonacciHelper(pos, S, seq):
     if (pos == len(S) and (len(seq) >= 3)):
         return True
