@@ -1,8 +1,6 @@
 #!/bin/python3
 
-import math
 import os
-import sys
 
 #
 # Complete the 'acmTeam' function below.
