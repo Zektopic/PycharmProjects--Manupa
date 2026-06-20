@@ -2,14 +2,12 @@
 def part1(ass):
     n = ass
     total = 1
-    total_1 = total
     count = n
     while count > 0 :
         count -= 1
         total *= n
         n -= 1
-        total_1 = total
-    return total_1
+    return total
 
 
 ass = int(input())
