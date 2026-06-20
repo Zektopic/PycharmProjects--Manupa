@@ -10,13 +10,14 @@ def part1(ass):
     return total
 
 
-ass = int(input())
-count_1 = ass
-if 0 <= ass <= 750 :
-    total_1 = part1(ass)
-    while count_1 > 0 :
-        total_1 *= ass
-        count_1 -= 1
-    print(total_1)
-else:
-    print("Invalid answer. ")
+if __name__ == '__main__':
+    ass = int(input())
+    count_1 = ass
+    if 0 <= ass <= 750 :
+        total_1 = part1(ass)
+        while count_1 > 0 :
+            total_1 *= ass
+            count_1 -= 1
+        print(total_1)
+    else:
+        print("Invalid answer. ")
