@@ -7,10 +7,8 @@ num_samples = 48000
 sampling_rate = 48000.0
 amplitude = 16000
 file = "test.wav"
-sine_wave = []
-for x in range(num_samples):
-    val = np.sin(2 * np.pi * frequency * x/sampling_rate)
-    sine_wave.append(val)
+x = np.arange(num_samples)
+sine_wave = np.sin(2 * np.pi * frequency * x / sampling_rate)
 nframes=num_samples
 comptype="NONE"
 compname="not compressed"
