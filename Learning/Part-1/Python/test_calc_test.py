@@ -1,7 +1,6 @@
 import unittest
 import importlib.util
 import os
-import sys
 from unittest.mock import patch
 import io
 
