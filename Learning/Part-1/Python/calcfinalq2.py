@@ -91,7 +91,7 @@ def select_op(choice):
     print("Unrecognized operation")
 hist = []
 
-if __name__ == '__main__':
+if __name__ == "__main__":
   c1 = 0
   while True:
     print("Select operation.")
