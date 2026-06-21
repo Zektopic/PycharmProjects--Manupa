@@ -14,10 +14,10 @@ def decrypt():
 
     for c in encrypted_message:
 
-        if c in alphabet:
-            position = alphabet.find(c)
+        if 'a' <= c <= 'z':
+            position = ord(c) - 97
             new_position = (position - key) % 26
-            new_character = alphabet[new_position]
+            new_character = chr(new_position + 97)
             decrypted_message.append(new_character)
         else:
             decrypted_message.append(c)
