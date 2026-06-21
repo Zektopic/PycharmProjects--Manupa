@@ -1,21 +1,5 @@
 import unittest
-import importlib.util
-import os
-import sys
-
-# Add the directory containing the module to sys.path to resolve any internal imports if they existed
-module_dir = os.path.dirname(os.path.abspath(__file__))
-if module_dir not in sys.path:
-    sys.path.append(module_dir)
-
-# Import the module with spaces in its filename
-module_name = "Fibonacci Numbers (fast)"
-module_path = os.path.join(module_dir, module_name + ".py")
-
-spec = importlib.util.spec_from_file_location(module_name, module_path)
-fib_module = importlib.util.module_from_spec(spec)
-sys.modules[module_name] = fib_module
-spec.loader.exec_module(fib_module)
+import fibonacci_fast as fib_module
 
 class TestFibonacci(unittest.TestCase):
     def test_base_cases(self):
