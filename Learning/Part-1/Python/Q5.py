@@ -10,7 +10,25 @@ import os
 #
 
 def acmTeam(topic):
-    print("")
+    n = len(topic)
+    max_topics = 0
+    teams_count = 0
+
+    # Convert strings to integers for faster bitwise operations
+    ints = [int(t, 2) for t in topic]
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            # Bitwise OR and count the 1s
+            topics_known = (ints[i] | ints[j]).bit_count()
+
+            if topics_known > max_topics:
+                max_topics = topics_known
+                teams_count = 1
+            elif topics_known == max_topics:
+                teams_count += 1
+
+    return [max_topics, teams_count]
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
