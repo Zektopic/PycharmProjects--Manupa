@@ -21,8 +21,11 @@ def multiply (a,b):
 def divide(a,b):
   try:
     return a/b
-  except Exception as e:
-    print(e)
+  except ZeroDivisionError:
+    if isinstance(a, float) or isinstance(b, float):
+      print("float division by zero")
+    else:
+      print("division by zero")
 def power(a,b):
   return a**b
   
