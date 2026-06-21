@@ -1,10 +1,12 @@
 import unittest
-import importlib
-import sys
+import importlib.util
 import os
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-basic_program = importlib.import_module('Basic Program')
+module_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Basic Program.py')
+spec = importlib.util.spec_from_file_location('basic_program', module_path)
+basic_program = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(basic_program)
+
 max_num = basic_program.max_num
 
 class TestMaxNum(unittest.TestCase):
