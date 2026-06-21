@@ -10,8 +10,8 @@ def multiply (a,b):
 def divide(a,b):
   try:
     return a/b
-  except Exception as e:
-    print(e)
+  except ZeroDivisionError:
+    print("float division by zero")
 def power(a,b):
   return a**b
   
