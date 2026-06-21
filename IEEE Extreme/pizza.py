@@ -33,7 +33,7 @@ if __name__ == '__main__':
             D = get_number()
 
             boundedAngle = D % 180
-            if boundedAngle not in array:
+            if array[boundedAngle] == -1:
                 array[boundedAngle] = boundedAngle
                 if answer == 1:
                     answer += 1
