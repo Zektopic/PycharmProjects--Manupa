@@ -127,4 +127,4 @@ if __name__ == '__main__':
                         c2 = True
             other(choice,a,b)
         elif(select_op(choice) == 1):
-            True
+            continue
