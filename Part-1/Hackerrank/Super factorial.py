@@ -10,8 +10,11 @@ def part1(ass):
     return total
 
 
-if __name__ == '__main__':
-    ass = int(input())
+def main():
+    try:
+        ass = int(input())
+    except EOFError:
+        return
     count_1 = ass
     if 0 <= ass <= 750 :
         total_1 = part1(ass)
@@ -21,3 +24,6 @@ if __name__ == '__main__':
         print(total_1)
     else:
         print("Invalid answer. ")
+
+if __name__ == '__main__':
+    main()
