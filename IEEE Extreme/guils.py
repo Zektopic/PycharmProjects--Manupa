@@ -11,8 +11,10 @@ def encrypt(text,s):
 			result.append(chr((ord(char) + s-65) % 26 + 65))
 
 		# Encrypt lowercase characters
-		else:
+		elif (char.islower()):
 			result.append(chr((ord(char) + s - 97) % 26 + 97))
+		else:
+			result.append(char)
 
 	return "".join(result)
 
