@@ -35,7 +35,7 @@ def select_op(choice):
       try:
         num1 = float(num1s)
         break
-      except:
+      except ValueError:
         print("Not a valid number,please enter again")
         continue
     
@@ -49,7 +49,7 @@ def select_op(choice):
       try:  
         num2 = float(num2s)
         break
-      except:
+      except ValueError:
         print("Not a valid number,please enter again")
         continue
       
