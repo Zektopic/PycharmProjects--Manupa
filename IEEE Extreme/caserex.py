@@ -10,19 +10,10 @@ def decrypt():
     print()
     key = int(input("Enter key to decrypt: "))
     
-    decrypted_message = []
-
-    for c in encrypted_message:
-
-        if 'a' <= c <= 'z':
-            position = ord(c) - 97
-            new_position = (position - key) % 26
-            new_character = chr(new_position + 97)
-            decrypted_message.append(new_character)
-        else:
-            decrypted_message.append(c)
-
-    decrypted_message = "".join(decrypted_message)
+    decrypted_message = "".join([
+        chr(((ord(c) - 97 - key) % 26) + 97) if 'a' <= c <= 'z' else c
+        for c in encrypted_message
+    ])
 
     print("\nDecrypting your message...\n")
     sleep(2) # give an appearance of doing something complicated
