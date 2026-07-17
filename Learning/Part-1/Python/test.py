@@ -93,7 +93,7 @@ if __name__ == '__main__':
                     a = float(a)
                     c1 = False
                     c2 = True
-                except:
+                except Exception:
                     if(a[-1]=='$'):
                         choice = '$'
                         select_op(choice)
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                 try:
                     b = float(b)
                     c2 = False
-                except:
+                except Exception:
                     if(b[-1]=="$"):
                         choice = '$'
                         select_op(choice)
