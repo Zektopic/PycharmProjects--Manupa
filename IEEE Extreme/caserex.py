@@ -1,5 +1,4 @@
 import string
-from time import sleep
 
 alphabet = string.ascii_lowercase # "abcdefghijklmnopqrstuvwxyz"
 
@@ -25,9 +24,7 @@ def decrypt():
     decrypted_message = "".join(decrypted_message)
 
     print("\nDecrypting your message...\n")
-    sleep(2) # give an appearance of doing something complicated
     print("Stand by, almost finished...\n")
-    sleep(2) # more of the same
     print("Your decrypted message is:\n")
     print(decrypted_message)
 
