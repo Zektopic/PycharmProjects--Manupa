@@ -2,6 +2,8 @@ import unittest
 import importlib.util
 import os
 import sys
+from unittest.mock import patch
+import io
 
 # Dynamically load guils.py to avoid issues with directory names having spaces
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -32,6 +34,26 @@ class TestGuilsEncrypt(unittest.TestCase):
     def test_large_shift(self):
         self.assertEqual(guils.encrypt("Hello", 26), "Hello")
         self.assertEqual(guils.encrypt("Hello", 29), "Khoor")
+
+    def test_empty_string(self):
+        self.assertEqual(guils.encrypt("", 3), "")
+
+    def test_negative_shift(self):
+        self.assertEqual(guils.encrypt("Khoor", -3), "Hello")
+        self.assertEqual(guils.encrypt("KHOOR", -3), "HELLO")
+
+    def test_special_characters(self):
+        self.assertEqual(guils.encrypt("Hello, World! 123", 3), "Khoor, Zruog! 123")
+
+
+class TestMain(unittest.TestCase):
+    @patch('builtins.input', side_effect=['Hello'])
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_main_block(self, mock_stdout, mock_input):
+        spec = importlib.util.spec_from_file_location("__main__", guils_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        self.assertEqual(mock_stdout.getvalue().strip(), "Tqxxa")
 
 if __name__ == '__main__':
     unittest.main()
