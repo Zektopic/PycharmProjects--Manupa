@@ -21,6 +21,10 @@ class TestSuperFactorial(unittest.TestCase):
     def test_part1_zero(self):
         self.assertEqual(super_factorial.part1(0), 1)
 
+    def test_part1_negative(self):
+        self.assertEqual(super_factorial.part1(-1), 1)
+        self.assertEqual(super_factorial.part1(-5), 1)
+
     def test_part1_one(self):
         self.assertEqual(super_factorial.part1(1), 1)
 
