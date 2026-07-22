@@ -2,11 +2,9 @@ import unittest
 import importlib.util
 import os
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-spec = importlib.util.spec_from_file_location(
-    "Basic_Program",
-    os.path.join(current_dir, "Basic Program.py")
-)
+
+module_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Basic Program.py')
+spec = importlib.util.spec_from_file_location('basic_program', module_path)
 basic_program = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(basic_program)
 
