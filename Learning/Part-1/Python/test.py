@@ -27,17 +27,7 @@ def select_op(choice):
         return -1
     elif(choice == '$'):
         return 1
-    if(choice == '+'):
-        return 0
-    elif(choice == '-'):
-        return 0
-    elif(choice == '*'):
-        return 0
-    elif(choice == '/'):
-        return 0
-    elif(choice == '^'):
-        return 0
-    elif(choice == '%'):
+    elif choice in ('+', '-', '*', '/', '^', '%'):
         return 0
     else:
          print("Unrecognized operation")
