@@ -1,6 +1,6 @@
 
-def part1(ass):
-    n = ass
+def part1(num):
+    n = num
     total = 1
     count = n
     while count > 0 :
@@ -12,14 +12,14 @@ def part1(ass):
 
 def main():
     try:
-        ass = int(input())
+        num = int(input())
     except EOFError:
         return
-    count_1 = ass
-    if 0 <= ass <= 750 :
-        total_1 = part1(ass)
+    count_1 = num
+    if 0 <= num <= 750 :
+        total_1 = part1(num)
         while count_1 > 0 :
-            total_1 *= ass
+            total_1 *= num
             count_1 -= 1
         print(total_1)
     else:
