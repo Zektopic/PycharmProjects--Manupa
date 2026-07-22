@@ -21,6 +21,19 @@ class TestKnight(unittest.TestCase):
         board = [[0, -1], [-1, -1]]
         self.assertFalse(isSafe(0, 0, board))
 
+    def test_isSafe_empty_board(self):
+        board = []
+        self.assertFalse(isSafe(0, 0, board))
+
+    def test_isSafe_larger_board(self):
+        board = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]
+        self.assertTrue(isSafe(2, 2, board))
+        self.assertFalse(isSafe(3, 3, board))
+
+    def test_isSafe_different_visited_number(self):
+        board = [[5, -1], [-1, -1]]
+        self.assertFalse(isSafe(0, 0, board))
+
     def test_printSolution(self):
         board = [[0, 1], [2, 3]]
         expected_output = "0 1 \n2 3 \n"
